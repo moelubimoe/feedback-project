@@ -34,10 +34,17 @@
                     <input type="email" id="email" name="email" required placeholder="Ваш email...">
                 </div>
                 
-                <div class="form-group">
-                    <label for="subject">Тема обращения:</label>
-                    <input type="text" id="subject" name="subject" required placeholder="Тема...">
-                </div>
+<div class="form-group">
+    <label for="subject">Тема обращения:</label>
+    <select id="subject" name="subject" required>
+        <option value="" disabled selected>Выберите тему...</option>
+        <option value="technical">Техническая проблема</option>
+        <option value="account">Вопрос по аккаунту</option>
+        <option value="payment">Проблемы с оплатой</option>
+        <option value="suggestion">Предложение по улучшению</option>
+        <option value="other">Другое</option>
+    </select>
+</div>
                 
                 <div class="form-group">
                     <label for="message">Текст обращения:</label>
@@ -53,7 +60,7 @@
     </div>
     
     <footer>
-        <p>© 2023 Мой Пет-Проект</p>
+        <p>© 2025 Наталья Захарова</p>
     </footer>
     
     <script src="script.js"></script>

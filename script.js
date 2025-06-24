@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         feedbackForm.reset();
         closeModal();
     });
-    
     // Анимация при загрузке
     const content = document.querySelector('.content');
     content.style.opacity = 0;

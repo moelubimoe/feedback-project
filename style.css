@@ -184,3 +184,49 @@ footer {
         width: 100%;
     }
 }
+/* Обновлённые стили для формы */
+.modal-content {
+    padding: 2rem; /* одинаковые отступы */
+    width: 90%;
+    max-width: 500px;
+    margin: 5% auto; /* центрирование */
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    transition: all 0.3s ease;
+    appearance: none; /* убираем стандартный вид */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1rem;
+}
+
+.form-group select:focus {
+    border-color: #6e8efb;
+    box-shadow: 0 0 0 2px rgba(110, 142, 251, 0.2);
+    outline: none;
+}
+
+/* Анимация для выбора */
+.form-group select {
+    transition: transform 0.2s ease;
+}
+
+.form-group select:focus {
+    transform: scale(1.02);
+}
+
+/* Обновлённый футер */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background: #333;
+    color: white;
+}
