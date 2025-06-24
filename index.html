@@ -1,65 +1,61 @@
-{\rtf1\ansi\ansicpg1251\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="ru">\
-<head>\
-  <meta charset="UTF-8" />\
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\
-  <title>\uc0\u1054 \u1073 \u1088 \u1072 \u1090 \u1085 \u1072 \u1103  \u1089 \u1074 \u1103 \u1079 \u1100 </title>\
-  <script src="https://cdn.tailwindcss.com"></script>\
-</head>\
-<body class="bg-gray-100 flex justify-center items-center h-screen">\
-\
-  <button id="openModal" class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700">\
-    \uc0\u1054 \u1073 \u1088 \u1072 \u1090 \u1085 \u1072 \u1103  \u1089 \u1074 \u1103 \u1079 \u1100 \
-  </button>\
-\
-  <!-- \uc0\u1052 \u1086 \u1076 \u1072 \u1083 \u1082 \u1072  -->\
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">\
-    <div class="bg-white rounded-xl p-8 w-full max-w-md shadow-lg relative">\
-      <h2 class="text-2xl font-bold mb-4">\uc0\u1060 \u1086 \u1088 \u1084 \u1072  \u1086 \u1073 \u1088 \u1072 \u1090 \u1085 \u1086 \u1081  \u1089 \u1074 \u1103 \u1079 \u1080 </h2>\
-      <form id="feedbackForm">\
-        <input type="text" name="name" placeholder="\uc0\u1042 \u1072 \u1096 \u1077  \u1080 \u1084 \u1103 " required class="w-full border p-2 mb-3 rounded" />\
-        <input type="email" name="email" placeholder="Email" required class="w-full border p-2 mb-3 rounded" />\
-        <textarea name="message" placeholder="\uc0\u1057 \u1086 \u1086 \u1073 \u1097 \u1077 \u1085 \u1080 \u1077 " required class="w-full border p-2 mb-3 rounded h-24"></textarea>\
-        <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">\uc0\u1054 \u1090 \u1087 \u1088 \u1072 \u1074 \u1080 \u1090 \u1100 </button>\
-      </form>\
-      <button id="closeModal" class="absolute top-2 right-3 text-gray-500 text-xl">&times;</button>\
-    </div>\
-  </div>\
-\
-  <script>\
-    const modal = document.getElementById('modal');\
-    document.getElementById('openModal').onclick = () => modal.classList.remove('hidden');\
-    document.getElementById('closeModal').onclick = () => modal.classList.add('hidden');\
-\
-    // \uc0\u1054 \u1073 \u1088 \u1072 \u1073 \u1086 \u1090 \u1082 \u1072  \u1092 \u1086 \u1088 \u1084 \u1099  (\u1087 \u1086 \u1082 \u1072  \u1087 \u1088 \u1086 \u1089 \u1090 \u1086  \u1083 \u1086 \u1075 )\
-    document.getElementById('feedbackForm').addEventListener('submit', async (e) => \{\
-      e.preventDefault();\
-      const formData = new FormData(e.target);\
-      const data = Object.fromEntries(formData.entries());\
-      console.log('\uc0\u1054 \u1090 \u1087 \u1088 \u1072 \u1074 \u1082 \u1072  \u1076 \u1072 \u1085 \u1085 \u1099 \u1093 :', data);\
-\
-      // \uc0\u1058 \u1091 \u1090  \u1073 \u1091 \u1076 \u1077 \u1090  \u1088 \u1077 \u1072 \u1083 \u1100 \u1085 \u1099 \u1081  fetch-\u1079 \u1072 \u1087 \u1088 \u1086 \u1089  \u1082  API\
-      const response = await fetch('http://localhost:8000/api/feedback', \{\
-        method: 'POST',\
-        headers: \{ 'Content-Type': 'application/json' \},\
-        body: JSON.stringify(data),\
-      \});\
-\
-      if (response.ok) \{\
-        alert('\uc0\u1057 \u1086 \u1086 \u1073 \u1097 \u1077 \u1085 \u1080 \u1077  \u1086 \u1090 \u1087 \u1088 \u1072 \u1074 \u1083 \u1077 \u1085 \u1086 !');\
-        modal.classList.add('hidden');\
-      \} else \{\
-        alert('\uc0\u1054 \u1096 \u1080 \u1073 \u1082 \u1072  \u1087 \u1088 \u1080  \u1086 \u1090 \u1087 \u1088 \u1072 \u1074 \u1082 \u1077 .');\
-      \}\
-    \});\
-  </script>\
-</body>\
-</html>\
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Пет-Проект</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в мой пет-проект!</h1>
+    </header>
+    
+    <main>
+        <section class="content">
+            <p>Это демонстрационная страница с примером реализации формы обратной связи.</p>
+            <p>Нажмите кнопку ниже, чтобы открыть модальное окно.</p>
+            
+            <button id="feedbackBtn" class="btn">
+                <i class="fas fa-comment-dots"></i> Обратная связь
+            </button>
+        </section>
+    </main>
+    
+    <!-- Модальное окно обратной связи -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Обратная связь</h2>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Ваш email...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Тема обращения:</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Тема...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Текст обращения:</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Ваше сообщение..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" id="cancelBtn" class="btn btn-secondary">Отменить</button>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Мой Пет-Проект</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
